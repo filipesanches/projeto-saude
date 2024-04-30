@@ -80,12 +80,12 @@ export const checkDoctorExists = async (cpf: string): Promise<boolean> => {
 };
 
 export const validateForm = (formData: FormData): { errorCpf: boolean; errorRg: boolean; errorContact: boolean; errorRequireFields: boolean; errorPhotoValid: boolean } => {
-  const { name, cpf, rg, birthDate, email, phone, crm, errorPhoto, service, status, cep, street, number, neighborhood, city, state } = formData;
+  const { name, cpf, rg, birthDate, email, phone, crm, errorPhoto, specialty, service, status, cep, street, number, neighborhood, city, state } = formData;
 
   const errorCpf = validateCPF(cpf);
   const errorRg = validateRG(rg);
   const errorContact = validateContactInfo(email || '', phone || '');
-  const errorRequireFields = validateRequireFields([name, cpf, rg, service, status, birthDate, crm, cep, street, number, neighborhood, city, state]);
+  const errorRequireFields = validateRequireFields([name, cpf, rg, service, status, birthDate, crm, specialty, cep, street, number, neighborhood, city, state]);
   const errorPhotoValid = validatePhoto(errorPhoto || false);
 
   return {

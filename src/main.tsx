@@ -7,6 +7,7 @@ import ErrorPage from './pages/ErrorPage';
 import Register from './pages/Register';
 import DoctorDetails from './pages/DoctorDetails';
 import ListDoctors from './pages/ListDoctors';
+import Index from './routes';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
+      { index: true, element: <Index /> },
       {
         path: '/*',
         element: <ErrorPage />,

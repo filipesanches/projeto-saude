@@ -7,14 +7,14 @@ import { BiSolidCity } from 'react-icons/bi';
 import { MdInfo } from 'react-icons/md';
 import { HiBriefcase } from 'react-icons/hi2';
 import { IoMdSearch } from 'react-icons/io';
+import { FaUserDoctor } from 'react-icons/fa6';
 
 export default function ListDoctors() {
   const [doctors, setDoctors] = useState<DoctorData[]>([]);
   const [update, setUpdate] = useState(0); // Adicionar um estado para forçar a atualização
   const [search, setSearch] = useState('');
 
-  const filteredData = doctors.filter((doctor) => doctor.city.startsWith(search) || doctor.name.startsWith(search) || doctor.crm.startsWith(search));
-
+  const filteredData = doctors.filter((doctor) => doctor.city.startsWith(search) || doctor.name.startsWith(search) || doctor.crm.startsWith(search) || doctor.specialty.startsWith(search));
 
   useEffect(() => {
     async function fetchDataAndSetDoctors() {
@@ -46,7 +46,7 @@ export default function ListDoctors() {
         <div className={classes['search-container']}>
           <form id="search-form" role="search">
             <div>
-              <input placeholder="Busque por nome, local ou crm" type="search" name="search" onChange={(e) => setSearch(e.target.value)} value={search} />
+              <input placeholder="Busque por nome, local, CRM ou Especialidade" type="search" name="search" onChange={(e) => setSearch(e.target.value)} value={search} />
               <IoMdSearch className={classes['icon-search']} />
             </div>
           </form>
@@ -61,6 +61,9 @@ export default function ListDoctors() {
                 </div>
                 <p className={classes['doctor-info']}>
                   <HiIdentification /> {doctor.crm}
+                </p>
+                <p className={classes['doctor-info']}>
+                  <FaUserDoctor /> {doctor.specialty}
                 </p>
                 <p className={classes['doctor-info']}>
                   <BiSolidCity /> {doctor.city}

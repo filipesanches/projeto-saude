@@ -11,6 +11,7 @@ import { LuMapPin } from 'react-icons/lu';
 import { IoMdSearch, IoMdPersonAdd } from 'react-icons/io';
 import { useState } from 'react';
 import FormRegister from '../FormRegister';
+import { FaUserDoctor } from 'react-icons/fa6';
 
 export default function LayoutRegister({ doctors }: { doctors: DoctorData[] }) {
   const [search, setSearch] = useState('');
@@ -19,7 +20,7 @@ export default function LayoutRegister({ doctors }: { doctors: DoctorData[] }) {
     setOpenFormCadastro(!openFormCadastro);
   };
 
-  const filteredData = doctors.filter((doctor) => doctor.cpf.startsWith(search) || doctor.name.startsWith(search));
+  const filteredData = doctors.filter((doctor) => doctor.cpf.startsWith(search) || doctor.name.startsWith(search) || doctor.crm.startsWith(search)  || doctor.specialty.startsWith(search));
 
   const formContainer = (
     <div className={classes['form-container']}>
@@ -32,7 +33,7 @@ export default function LayoutRegister({ doctors }: { doctors: DoctorData[] }) {
         <div className={classes['search-container']}>
           <form id="search-form" role="search">
             <div>
-              <input placeholder="Search" type="search" name="search" onChange={(e) => setSearch(e.target.value)} value={search} />
+              <input placeholder="Busque por nome, CPF, CRM ou Especialidade" type="search" name="search" onChange={(e) => setSearch(e.target.value)} value={search} />
               <IoMdSearch className={classes['icon-search']} />
             </div>
           </form>
@@ -68,6 +69,9 @@ export default function LayoutRegister({ doctors }: { doctors: DoctorData[] }) {
                   </p>
                   <p>
                     <HiOutlineIdentification /> CRM: {doctor.crm}
+                  </p>
+                  <p>
+                    <FaUserDoctor /> Especialidade: {doctor.specialty}
                   </p>
                   <p>
                     <TiDocumentText /> Serviço: {doctor.service}

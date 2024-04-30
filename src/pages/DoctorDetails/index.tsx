@@ -12,6 +12,7 @@ import { GrStatusUnknown } from 'react-icons/gr';
 import { LuMapPin } from 'react-icons/lu';
 import FormEdit from '../../components/FormEdit';
 import { removeItem } from '../../services/serverDataLocal';
+import { FaUserDoctor } from 'react-icons/fa6';
 
 export default function DoctorDetails() {
   const [doctorData, setDoctorData] = useState<DoctorData[]>([]);
@@ -50,6 +51,7 @@ export default function DoctorDetails() {
   const email = (Array.isArray(updateDataCard) ? updateDataCard[0]?.email : updateDataCard?.email) || doctor?.email;
   const phone = (Array.isArray(updateDataCard) ? updateDataCard[0]?.phone : updateDataCard?.phone) || doctor?.phone;
   const crm = (Array.isArray(updateDataCard) ? updateDataCard[0]?.crm : updateDataCard?.crm) || doctor?.crm;
+  const specialty = (Array.isArray(updateDataCard) ? updateDataCard[0]?.specialty : updateDataCard?.specialty) || doctor?.specialty;
   const photo = (Array.isArray(updateDataCard) ? updateDataCard[0]?.photoURL : updateDataCard?.photoURL) || doctor?.photoURL;
   const service = (Array.isArray(updateDataCard) ? updateDataCard[0]?.service : updateDataCard?.service) || doctor?.service;
   const status = (Array.isArray(updateDataCard) ? updateDataCard[0]?.status : updateDataCard?.status) || doctor?.status;
@@ -125,6 +127,9 @@ export default function DoctorDetails() {
             </p>
             <p>
             <HiOutlineIdentification /> CRM: {crm}
+            </p>
+            <p>
+            <FaUserDoctor /> Especialidade: {specialty}
             </p>
             <p>
               <TiDocumentText /> Serviço: {service}

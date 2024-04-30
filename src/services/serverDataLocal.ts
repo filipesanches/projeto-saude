@@ -25,7 +25,6 @@ export const editItem = async (userData: FormData) => {
   return localStorage.setItem('medicos', JSON.stringify(newDataArray));
 };
 
-
 export const setItem = async (data: string) => {
   try {
     const dataItem = await getItem();
@@ -57,13 +56,32 @@ export const setItem = async (data: string) => {
 
 export const removeItem = (cpfToRemove: string) => {
   const dataLocalStorage = localStorage.getItem('medicos');
-  if (dataLocalStorage) {
-    const dataArray: FormData[] = JSON.parse(dataLocalStorage);
-    const newDataArray = dataArray.filter((item) => item.cpf !== cpfToRemove);
-    localStorage.setItem('medicos', JSON.stringify(newDataArray));
-    return newDataArray;
+  const deleteCpf = localStorage.getItem('delete');
+  const arrDelete = []
+  if (deleteCpf) {
+    arrDelete.push(...JSON.parse(deleteCpf), cpfToRemove);
+    console.log(arrDelete);
+    localStorage.setItem('delete', JSON.stringify(arrDelete));
+    if (dataLocalStorage) {
+      const dataArray: FormData[] = JSON.parse(dataLocalStorage);
+      const newDataArray = dataArray.filter((item) => item.cpf !== cpfToRemove);
+      localStorage.setItem('medicos', JSON.stringify(newDataArray));
+      return newDataArray;
+    } else {
+      console.error('Nenhum dado encontrado no localStorage');
+      return [];
+    }
   } else {
-    console.error('Nenhum dado encontrado no localStorage');
-    return [];
+    arrDelete.push(cpfToRemove)
+    localStorage.setItem('delete', JSON.stringify(arrDelete));
+    if (dataLocalStorage) {
+      const dataArray: FormData[] = JSON.parse(dataLocalStorage);
+      const newDataArray = dataArray.filter((item) => item.cpf !== cpfToRemove);
+      localStorage.setItem('medicos', JSON.stringify(newDataArray));
+      return newDataArray;
+    } else {
+      console.error('Nenhum dado encontrado no localStorage');
+      return [];
+    }
   }
 };

@@ -157,6 +157,7 @@ export default function FormEdit({ toggleForm, dataForm, upToDate }: FormEditPro
       birthDate: userData.birthDate,
       service: userData.service,
       crm: userData.crm,
+      specialty: userData.specialty,
       rg: userData.rg,
       cpf: userData.cpf,
       email: userData.email,
@@ -226,6 +227,10 @@ export default function FormEdit({ toggleForm, dataForm, upToDate }: FormEditPro
           <div>
             <input type="text" name="crm" id="crm" required value={userData.crm} onChange={handleInputChange} />
             <label htmlFor="crm">CRM:</label>
+          </div>
+          <div>
+            <input type="text" name="specialty" id="specialty" required value={userData.specialty} onChange={handleInputChange} />
+            <label htmlFor="specialty">Especialidade:</label>
           </div>
           <div className={classes.photo}>
             <p>Foto:</p>

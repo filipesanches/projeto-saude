@@ -36,6 +36,7 @@ export default function FormRegister({ toggleForm }: { toggleForm: () => void })
   const emailRef = useRef<HTMLInputElement>(null);
   const phoneRef = useRef<HTMLInputElement>(null);
   const crmRef = useRef<HTMLInputElement>(null);
+  const specialtyRef = useRef<HTMLInputElement>(null);
   const serviceRefInPerson = useRef<HTMLInputElement>(null);
   const serviceRefOnline = useRef<HTMLInputElement>(null);
   const statusActiveRef = useRef<HTMLInputElement>(null);
@@ -161,6 +162,7 @@ export default function FormRegister({ toggleForm }: { toggleForm: () => void })
       email: emailRef.current?.value || '',
       phone: phoneRef.current?.value || '',
       crm: crmRef.current?.value || '',
+      specialty: specialtyRef.current?.value || '',
       photoURL: photoURL,
       service: serviceRefInPerson.current?.checked ? 'presencial' : serviceRefOnline.current?.checked ? 'online' : '',
       status: statusActiveRef.current?.checked ? 'ativo' : statusInactiveRef.current?.checked ? 'inativo' : '',
@@ -173,7 +175,17 @@ export default function FormRegister({ toggleForm }: { toggleForm: () => void })
       city: cityRef.current?.value || '',
       state: stateRef.current?.value || '',
     };
-
+    const storedCpfsJSON = localStorage.getItem('delete');
+    if (storedCpfsJSON) {
+      const storedCpfs = JSON.parse(storedCpfsJSON);
+      const cpf = formData.cpf.replace(/\D/g, ''); // Remove caracteres não numéricos do CPF
+      if (storedCpfs.includes(cpf)) {
+        console.log('CPF encontrado na lista de exclusão, removendo...');
+        // Remove o CPF da lista
+        const updatedCpfs = storedCpfs.filter((item: string) => item !== cpf);
+        localStorage.setItem('delete', JSON.stringify(updatedCpfs));
+      }
+    }
     const exists = await checkDoctorExists(formData.cpf);
     const { errorCpf, errorRg, errorContact, errorRequireFields, errorPhotoValid } = validateForm(formData);
 
@@ -253,7 +265,11 @@ export default function FormRegister({ toggleForm }: { toggleForm: () => void })
           </div>
           <div>
             <input type="text" name="crm" id="crm" required ref={crmRef} />
-            <label htmlFor="crm">CRM:</label>
+            <label htmlFor="crm">Especialidade:</label>
+          </div>
+          <div>
+            <input type="text" name="specialty" id="specialty" required ref={specialtyRef} />
+            <label htmlFor="specialty">CRM:</label>
           </div>
           <div className={classes.photo}>
             <p>Foto:</p>

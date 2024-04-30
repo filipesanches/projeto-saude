@@ -26,5 +26,9 @@ html, body, #root{
   .layout{
     height: auto;
     grid-template-columns: 1fr;
+    .content{
+      max-height: calc(100vh - 90px);
+      overflow: auto;
+    }
   }
 }

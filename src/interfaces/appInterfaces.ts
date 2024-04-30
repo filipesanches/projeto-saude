@@ -11,6 +11,7 @@ export type DoctorData = {
   service: string;
   status: string;
   crm: string;
+  specialty: string;
   cep: string;
   street: string;
   number: string;
@@ -31,6 +32,7 @@ export interface FormData {
   service: string;
   status: string;
   crm: string;
+  specialty: string;
   cep: string;
   street: string;
   number: string;
