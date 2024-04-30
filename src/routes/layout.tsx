@@ -6,7 +6,7 @@ export default function Layout() {
     <>
       <div className={'layout'}>
         <SideBar />
-        <div>
+        <div className={'content'}>
           <Outlet />
         </div>
       </div>

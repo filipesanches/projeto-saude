@@ -5,11 +5,21 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
+html, body, #root{
+  max-height: 100vh;
+  height: 100%;
+}
 .layout{
   width: 100%;
-  height: 100vh;
+  max-height: 100vh;
+  height: 100%;
   display: grid;
   grid-template-columns: 300px 1fr;
+  overflow: auto;
+  .content{
+    max-height: 100vh;
+    overflow: auto;
+  }
 }
 
 @media screen and (max-width: 952px) {
