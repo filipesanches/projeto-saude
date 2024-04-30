@@ -1,0 +1,149 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.541);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal {
+  background-color: #98bfe4;
+  top: 0;
+  position: absolute;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  max-width: 500px;
+  width: 100%;
+  overflow: auto;
+  margin-top: 20px;
+  form {
+    div {
+      width: 100%;
+      position: relative;
+      input:not(.service input, .status input) {
+        width: 100%;
+        padding: 17px 2px 5px 10px;
+        outline: none;
+        border: none;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        &:active + label,
+        &:focus + label,
+        &:valid + label {
+          top: 2px;
+          left: 5px;
+          transform: translateY(0);
+          font-size: 11px;
+          color: #499de2;
+          background-color: transparent;
+        }
+      }
+      label:not(.service label, .status label) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10px;
+        transition: 0.5s ease;
+        background-color: #ffffff;
+      }
+    }
+    .service,
+    .status,
+    .photo,
+    .address {
+      border: 1px solid #ffffff;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 5px;
+      p {
+        color: #ffffff;
+        margin-bottom: 5px;
+      }
+      input {
+        margin-right: 5px;
+      }
+      input[type='file'] {
+        display: none;
+      }
+      input[type='file']:active + label,
+      input[type='file']:focus + label,
+      input[type='file']:valid + label,
+      input[type='file'] + label {
+        width: 200px;
+        transition: background-color 0.5s ease;
+        cursor: pointer;
+        position: initial;
+        font-size: 11pt;
+        margin: 0;
+        padding: 10px;
+        background-color: #ffffff;
+        display: block;
+        transform: translateY(0);
+        border-radius: 5px;
+        margin-bottom: 5px;
+        color: #000000;
+        text-align: center;
+      }
+      input[type='file'] + label:hover {
+        background-color: #e6e6e6;
+      }
+      input:nth-child(3) {
+        margin-left: 15px;
+      }
+      .twoInput {
+        display: flex;
+        div:last-child {
+          width: 200px;
+          margin-left: 5px;
+        }
+      }
+    }
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+      button {
+        margin-left: 5px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        color: #ffffff;
+        transition: background-color 0.5s ease;
+        cursor: pointer;
+        &:nth-child(1) {
+          background-color: #dc3545;
+        }
+        &:nth-child(1):hover {
+          background-color: #c82333;
+        }
+        &:nth-child(2) {
+          background-color: #007bff;
+        }
+        &:nth-child(2):hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+}
+
+.error p {
+  margin-top: 5px;
+  display: flex;
+  color: #dc3545;
+  svg {
+    margin-right: 5px;
+  }
+}
+.success p {
+  display: flex;
+  color: #005013 !important;
+  svg {
+    margin-right: 5px;
+  }
+}

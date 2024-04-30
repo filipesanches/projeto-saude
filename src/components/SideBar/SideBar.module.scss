@@ -1,0 +1,131 @@
+.sideBar {
+  background-color: #0070cc;
+  .logo {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 30px 10px;
+    border-bottom: 1px solid #eee;
+    .iconLogo {
+      margin-right: 10px;
+    }
+  }
+  .menu {
+    border: none;
+    outline: none;
+    display: none;
+  }
+  .navBar {
+    ul {
+      list-style: none;
+      li {
+        a {
+          text-decoration: none;
+          display: block;
+          padding: 10px;
+          margin: 5px;
+          color: #fff;
+          transition: background 0.5s linear;
+          &:hover {
+            color: #fff;
+            background-color: #002446;
+            border-radius: 5px;
+          }
+        }
+        .active {
+          color: #fff;
+          background-color: #004381;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 952px) {
+  .sideBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5px;
+    .logo {
+      border: none;
+      padding: 0;
+    }
+    .menu {
+      display: block;
+      background-color: transparent;
+      color: #fff;
+      font-size: 30px;
+      cursor: pointer;
+    }
+    .navBar {
+      display: none;
+    }
+    .open {
+      display: block;
+      position: absolute;
+      background-color: #c3ddf1;
+      top: 60px;
+      right: 10px;
+      max-width: 230px;
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 1px 1px 5px #00000073;
+      animation: animation-menu-open 0.5s both;
+      overflow: hidden;
+      z-index: 999;
+      ul {
+        li {
+          .active {
+            color: #0070cc;
+            background-color: #ffffff;
+            box-shadow: inset 0 -3px rgb(0, 93, 155);
+            border-radius: 0;
+          }
+          a {
+            color: #003553;
+            position: relative;
+            margin: 0;
+            &:hover {
+              border-radius: 0;
+              color: #00588b;
+              background-color: transparent;
+            }
+            &:hover::after {
+              content: '';
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              background-color: #499de24b;
+              animation: animation-menu-hover 0.5s both;
+              box-shadow: inset 0 -3px rgb(0, 62, 104);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes animation-menu-hover {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes animation-menu-open {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}

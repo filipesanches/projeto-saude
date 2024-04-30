@@ -1,0 +1,58 @@
+{
+  "doctors": [
+    {
+      "name": "João Silva",
+      "cpf": "123.456.789-00",
+      "rg": "987654321",
+      "birthDate": "1990-05-15",
+      "email": "joao.silva@example.com",
+      "phone": "(12) 3456-7890",
+      "photoURL": "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg",
+      "service": "presencial",
+      "status": "ativo",
+      "crm": "01245789-9/BR",
+      "cep": "12345-678",
+      "street": "Rua das Flores",
+      "number": "123",
+      "neighborhood": "Centro",
+      "city": "Cidade Exemplo",
+      "state": "EX"
+    },
+    {
+      "name": "Maria Oliveira",
+      "cpf": "987.654.321-00",
+      "rg": "123456789",
+      "birthDate": "1985-10-20",
+      "email": "maria.oliveira@example.com",
+      "phone": "(21) 9876-5432",
+      "photoURL": "https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg",
+      "service": "online",
+      "status": "ativo",
+      "crm": "09876543-2/BR",
+      "cep": "08810-100",
+      "street": "Rua Maria do Nascimento Boz Vidal",
+      "number": "456",
+      "neighborhood": "Vila Suissa",
+      "city": "Mogi das Cruzes",
+      "state": "SP"
+    },
+    {
+      "name": "Carlos Santos",
+      "cpf": "456.789.123-00",
+      "rg": "543216789",
+      "birthDate": "1982-03-25",
+      "email": "carlos.santos@example.com",
+      "phone": "(31) 8765-4321",
+      "photoURL": "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg",
+      "service": "presencial",
+      "status": "inativo",
+      "crm": "04567891-0/BR",
+      "cep": "98765-432",
+      "street": "Rua dos Passarinhos",
+      "number": "789",
+      "neighborhood": "Bairro Antigo",
+      "city": "Cidade Antiga",
+      "state": "AN"
+    }
+  ]
+}

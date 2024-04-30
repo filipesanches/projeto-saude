@@ -1,0 +1,133 @@
+// Definição de variáveis para reutilização de cores
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+.container{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    width: 100%;
+    padding: 20px 10px;
+    form {
+      max-width: 400px;
+      width: 100%;
+      div {
+        position: relative;
+        input {
+          width: 100%;
+          height: 40px;
+          font-size: 16px;
+          padding: 0 10px 0 40px;
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+          border: 0;
+          outline: none;
+          border-radius: 5px;
+        }
+        .icon-search {
+          position: absolute;
+          top: 50%;
+          left: 10px;
+          transform: translateY(-50%);
+          font-size: 20px;
+          color: #499de2;
+        }
+      }
+    }
+    .icon-add {
+      padding: 0 5px;
+      background-color: #2e8cda;
+      font-size: 15pt;
+      color: #fff;
+      height: 40px;
+      margin-left: 10px;
+      border-radius: 5px;
+      border: 0;
+      outline: none;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+      transition: background-color 0.5s ease-in-out;
+      width: 160px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      cursor: pointer;
+      span {
+        font-size: 9pt;
+        margin-left: 5px;
+      }
+      &:hover {
+        background-color: #1d67a3;
+      }
+    }
+  }
+  
+  // Estilo para o componente de card do médico
+  .container-card {
+    display: flex;
+    max-height: calc(100vh - 200px);
+    height: 100%;
+    flex-flow: row wrap;
+    align-items: center;
+    overflow: auto;
+    align-content: center;
+    justify-content: center;
+    
+    .doctor-card {
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border: 1px solid $secondary-color;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      width: 250px;
+      margin-bottom: 20px; 
+  
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        object-fit: cover;
+      }
+  
+      .doctor-name {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+  
+      .doctor-info {
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: $secondary-color;
+      }
+  
+      .doctor-service {
+        font-style: italic;
+      }
+  
+      .doctor-active {
+        color: green;
+      }
+      .doctor-inactive {
+        color: red;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 880px) {
+    .container {
+      flex-flow: column nowrap;
+      max-width: 100vw;
+    }
+  }
+  
+}
