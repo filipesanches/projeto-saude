@@ -14,7 +14,7 @@ async function serverData() {
     }
 
     // Filtra os dados para excluir médicos com CPFs iguais aos armazenados
-    const filteredData = data.filter(doctor => !storedCpfs.includes(doctor.cpf));
+    const filteredData = data.filter((doctor: { cpf: string; }) => !storedCpfs.includes(doctor.cpf));
 
     return filteredData;
   } catch (error) {
