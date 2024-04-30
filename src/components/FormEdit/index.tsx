@@ -8,7 +8,7 @@ import { validateForm } from '../../utils/utils';
 import consultCEP from '../../services/cepService';
 
 export default function FormEdit({ toggleForm, dataForm, upToDate }: FormEditProps) {
-  const [userData, setUserData] = useState<FormData>(dataForm);
+  const [userData, setUserData] = useState<FormData>(dataForm); // Adicionando definição de userData
 
   const [photoURL, setPhotoURL] = useState('');
   const [elementPhoto, setElementPhoto] = useState(0);
@@ -61,8 +61,6 @@ export default function FormEdit({ toggleForm, dataForm, upToDate }: FormEditPro
 
   const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    console.log(userData);
-    console.log(name, value);
     console.log(dataForm);
     setUserData({
       ...userData,
@@ -135,6 +133,15 @@ export default function FormEdit({ toggleForm, dataForm, upToDate }: FormEditPro
         const consult = await consultCEP(newCep);
         setAddress(consult);
         setErrorCep(false);
+        // Move a atualização do endereço para aqui
+        setUserData({
+          ...userData,
+          cep: newCep,
+          city: consult.localidade || userData.city,
+          state: consult.uf || userData.state,
+          street: consult.logradouro || userData.street,
+          neighborhood: consult.bairro || userData.neighborhood,
+        });
       } catch {
         setErrorCep(true);
         console.error('CEP Incorreto!');
@@ -158,13 +165,13 @@ export default function FormEdit({ toggleForm, dataForm, upToDate }: FormEditPro
       photoURL: photoURL,
       number: userData.number,
       cep: cep,
-      city: address.localidade,
-      state: address.uf,
-      street: address.logradouro,
-      neighborhood: address.bairro,
+      city: address.localidade || userData.city,
+      state: address.uf || userData.state,
+      street: address.logradouro || userData.street,
+      neighborhood: address.bairro || userData.neighborhood,
     });
+    console.log(address.localidade);
     const { errorCpf, errorRg, errorContact, errorRequireFields, errorPhotoValid } = validateForm(userData);
-    console.log(userData);
     if (errorCpf && errorRg && errorContact && errorRequireFields && errorPhotoValid) {
       await editItem(userData);
       upToDate(userData);
@@ -174,7 +181,7 @@ export default function FormEdit({ toggleForm, dataForm, upToDate }: FormEditPro
         errorRg: true,
         errorContact: true,
         errorRequireFields: true,
-        errorPhotoValid: true
+        errorPhotoValid: true,
       });
     } else {
       setErrorValidate({
