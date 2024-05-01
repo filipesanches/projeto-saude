@@ -1,30 +1,69 @@
-# React + TypeScript + Vite
+# Sistema de Saúde
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descrição
 
-Currently, two official plugins are available:
+Este é um projeto de desenvolvimento front-end para uma plataforma online de contratação de profissionais de saúde. O projeto permite o cadastro, edição, listagem e exclusão de profissionais de saúde, além de outras funcionalidades.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Como Executar
 
-## Expanding the ESLint configuration
+**Para executar o projeto, siga os passos abaixo:**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1.  Certifique-se de ter o Node.js instalado na sua máquina. Você pode
+    baixá-lo em [nodejs.org](nodejs.org).
+2.  Clone este repositório para o seu ambiente local:
 
-- Configure the top-level `parserOptions` property like this:
+    ```
+    git clone https://github.com/filipesanches/projeto-saude.git
+    ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+3.  Acesse o diretório do projeto:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+    ```
+    cd sistema-saude
+    ```
+
+4.  Instale as dependências do projeto:
+
+    ```
+    npm install
+    ```
+
+5.  Execute o projeto em modo de desenvolvimento:
+    ```
+    npm run dev
+    ```
+6.  O projeto estará disponível em [http://localhost:5173/](http://localhost:5173/).
+
+## Como Testar
+
+**Para testar o projeto, você pode executar os seguintes comandos:**
+
+1.  Linting: Verifica o estilo e a qualidade do código:
+
+    npm run lint
+
+## Tecnologias Utilizadas
+
+- React - Biblioteca JavaScript para construção de interfaces de
+  usuário.
+- React Router - Roteamento de aplicativos para React.
+- JSON Server - Simula uma API RESTful utilizando um arquivo JSON.
+- TypeScript - Superset do JavaScript que adiciona tipagem estática.
+- Vite - Build tool rápida para projetos front-end.
+- ESLint - Ferramenta de análise de código estática para identificar
+  padrões problemáticos no código JavaScript/TypeScript.
+- Sass - Pré-processador CSS.
+
+## Estrutura do Projeto
+
+- src/: Contém o código-fonte da aplicação.
+- public/: Contém arquivos estáticos como HTML, imagens e outros
+  recursos.
+
+## Contribuindo
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue para relatar problemas ou sugerir melhorias. Pull requests também são apreciados.
+
+## Licença
+
+Este projeto está licenciado sob a MIT License.
