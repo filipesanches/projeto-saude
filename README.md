@@ -4,17 +4,35 @@
 
 Este é um projeto de desenvolvimento front-end para uma plataforma online de contratação de profissionais de saúde. O projeto permite o cadastro, edição, listagem e exclusão de profissionais de saúde, além de outras funcionalidades.
 
-## Simulação de API com JSON Server
+## Simulação de `API` com `JSON Server`
 
-Este projeto utiliza o JSON Server para simular uma API RESTful para armazenar e manipular dados dos profissionais de saúde localmente. O JSON Server é uma ferramenta que permite criar rapidamente uma API RESTful baseada em um arquivo JSON.
+Este projeto utiliza o `JSON Server` para simular uma `API RESTful` para armazenar e manipular dados dos profissionais de saúde localmente. O JSON Server é uma ferramenta que permite criar rapidamente uma `API RESTful` baseada em um arquivo `JSON`.
 
-### Instalação do JSON Server
+### Instalação do `JSON Server`
 
-Se você ainda não tem o JSON Server instalado globalmente, você pode instalá-lo usando npm:
-   ```bash
-   npm install -g json-server 
-   ```
+Se você ainda não tem o `JSON Server` instalado globalmente, você pode instalá-lo usando npm:
 
+```bash
+npm install -g json-server 
+```
+
+### Inicializando o `JSON Server`
+
+Para iniciar o `JSON Server` e começar a simular sua `API`, você pode usar o seguinte comando:
+
+```bash
+json-server --watch db.json --port 3000
+```
+
+Isso iniciará o `JSON Server` e o configurará para assistir ao arquivo `db.json` no diretório raiz do projeto. Ele estará disponível em [http://localhost:3001](http://localhost:3001).
+
+### Arquivo `db.json`
+
+O arquivo `db.json` contém os dados simulados para sua API. Certifique-se de ajustar esse arquivo conforme necessário para corresponder à estrutura de dados da sua aplicação.
+
+Para mais informações sobre como usar o `JSON Server`, consulte a documentação oficial em [https://github.com/typicode/json-server](https://github.com/typicode/json-server).
+
+``Essa seção do README fornece informações sobre como instalar e usar o JSON Server para simular uma API RESTful localmente, além de explicar como configurar o arquivo `db.json`. Certifique-se de ajustar as informações conforme necessário para refletir a configuração específica do seu projeto.  Se precisar de mais alguma coisa, estou à disposição para ajudar!``
 
 ## Como Executar
 
@@ -46,34 +64,33 @@ Se você ainda não tem o JSON Server instalado globalmente, você pode instalá
     npm run dev
     ```
 
-6.  O projeto estará disponível em [http://localhost:5173/](http://localhost:5173/).
+6.  Após a execução bem-sucedida, você poderá acessar o projeto no navegador usando o seguinte endereço: [http://localhost:5173/](http://localhost:5173/).
 
 ## Como Testar
 
 **Para testar o projeto, você pode executar os seguintes comandos:**
 
-1.  Linting: Verifica o estilo e a qualidade do código:
-
-    ```bash
-    npm run lint
-    ```
+### Linting: Verifica o estilo e a qualidade do código:
+```bash
+npm run lint
+```
     
 ## Tecnologias Utilizadas
 
-- React - Biblioteca JavaScript para construção de interfaces de
+- `React` - Biblioteca `JavaScript` para construção de interfaces de
   usuário.
-- React Router - Roteamento de aplicativos para React.
-- JSON Server - Simula uma API RESTful utilizando um arquivo JSON.
-- TypeScript - Superset do JavaScript que adiciona tipagem estática.
-- Vite - Build tool rápida para projetos front-end.
-- ESLint - Ferramenta de análise de código estática para identificar
-  padrões problemáticos no código JavaScript/TypeScript.
-- Sass - Pré-processador CSS.
+- `React Router` - Roteamento de aplicativos para React.
+- `JSON Server` - Simula uma `API RESTful` utilizando um arquivo `JSON`.
+- `TypeScript` - Superset do `JavaScript` que adiciona tipagem estática.
+- `Vite` - Build tool rápida para projetos front-end.
+- `ESLint` - Ferramenta de análise de código estática para identificar
+  padrões problemáticos no código `JavaScript/TypeScript`.
+- `Sass` - Pré-processador `CSS`.
 
 ## Estrutura do Projeto
 
-- src/: Contém o código-fonte da aplicação.
-- public/: Contém arquivos estáticos como HTML, imagens e outros
+- `src/`: Contém o código-fonte da aplicação.
+- `public/`: Contém arquivos estáticos como `HTML`, imagens e outros
   recursos.
 
 ## Contribuindo
