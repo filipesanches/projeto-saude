@@ -4,6 +4,18 @@
 
 Este é um projeto de desenvolvimento front-end para uma plataforma online de contratação de profissionais de saúde. O projeto permite o cadastro, edição, listagem e exclusão de profissionais de saúde, além de outras funcionalidades.
 
+## Simulação de API com JSON Server
+
+Este projeto utiliza o JSON Server para simular uma API RESTful para armazenar e manipular dados dos profissionais de saúde localmente. O JSON Server é uma ferramenta que permite criar rapidamente uma API RESTful baseada em um arquivo JSON.
+
+### Instalação do JSON Server
+
+Se você ainda não tem o JSON Server instalado globalmente, você pode instalá-lo usando npm:
+   ```bash
+   npm install -g json-server 
+   ```
+
+
 ## Como Executar
 
 **Para executar o projeto, siga os passos abaixo:**
@@ -12,26 +24,28 @@ Este é um projeto de desenvolvimento front-end para uma plataforma online de co
     baixá-lo em [nodejs.org](nodejs.org).
 2.  Clone este repositório para o seu ambiente local:
 
-    ```
+    ```bash
     git clone https://github.com/filipesanches/projeto-saude.git
     ```
 
 3.  Acesse o diretório do projeto:
 
-    ```
+    ```bash
     cd sistema-saude
     ```
 
 4.  Instale as dependências do projeto:
 
-    ```
+    ```bash
     npm install
     ```
 
 5.  Execute o projeto em modo de desenvolvimento:
-    ```
+
+    ```bash
     npm run dev
     ```
+
 6.  O projeto estará disponível em [http://localhost:5173/](http://localhost:5173/).
 
 ## Como Testar
@@ -40,8 +54,10 @@ Este é um projeto de desenvolvimento front-end para uma plataforma online de co
 
 1.  Linting: Verifica o estilo e a qualidade do código:
 
-    ```
+    ```bash
     npm run lint
+    ```
+    
 ## Tecnologias Utilizadas
 
 - React - Biblioteca JavaScript para construção de interfaces de
