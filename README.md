@@ -40,8 +40,8 @@ Este é um projeto de desenvolvimento front-end para uma plataforma online de co
 
 1.  Linting: Verifica o estilo e a qualidade do código:
 
+    ```
     npm run lint
-
 ## Tecnologias Utilizadas
 
 - React - Biblioteca JavaScript para construção de interfaces de
