@@ -32,7 +32,6 @@ O arquivo `db.json` contém os dados simulados para sua API. Certifique-se de aj
 
 Para mais informações sobre como usar o `JSON Server`, consulte a documentação oficial em [https://github.com/typicode/json-server](https://github.com/typicode/json-server).
 
-``Essa seção do README fornece informações sobre como instalar e usar o JSON Server para simular uma API RESTful localmente, além de explicar como configurar o arquivo `db.json`. Certifique-se de ajustar as informações conforme necessário para refletir a configuração específica do seu projeto.  Se precisar de mais alguma coisa, estou à disposição para ajudar!``
 
 ## Como Executar
 
